@@ -1,0 +1,89 @@
+--criando base de dados Mysql
+
+creat database db_estoque;
+use db_estoque;
+
+-- criando tabela
+
+create table tb_marcas(
+id bigint(5) auto_increment,
+nome varchar(20) not null,
+ativo boolean,
+primary key (id)
+);
+
+--visualizando tabela
+
+select * from tb_marcas
+
+--Populando tabela
+
+insert into tb_marcas(nome,ativo) values ("Nike",true);
+insert into tb_marcas(nome,ativo) values ("fatal surf", false);
+
+
+--Visualizando tabela populada
+
+
+select * from tb_marcas
+
+
+--Mudando dados da tabela
+
+
+update tb_marcas set nome = "Fatal Surf", ativo = true 
+where id=1;
+
+
+--Visualizando tabela com dados modificados
+
+
+select * from tb_marcas
+
+
+--Visualizando somente linhas específicas
+
+
+select * from tb_marcas id=2 -- podemos usar >2 ou < 2  o diferente é <>
+
+
+--Visualizando somente colunas específicas
+
+
+select nome, ativo from tb_marcas 
+
+-- Deletando dados (de uma linha)
+
+delete from tb_marcas where id =1
+
+
+-- Selecionar dado da tabela
+
+
+select * from tb_marcas where nome like "%za%"
+select * from tb_marcas where ativo = true
+
+
+--Criando nova tabela
+
+use db_estoque;
+create table tb_produtos (
+id bigint auto_increment,
+nome varchar(30) not null,
+preco decimal (10,2),
+marca_id bigint not null,
+primary key (id),
+foreign key (marcas_id) references tb_marcas(id)
+
+)
+
+--Populando tabela
+
+insert into tb_produtos (nome, preco, marca_id) values ("camisa",22.99,1)
+
+-- Selecionar dado da tabela
+
+
+select * from tb_produtos where nome like "%ca%"
+select * from tb_marcas where nome = "camisa"
+select * from tb_marcas where preco > 20.00

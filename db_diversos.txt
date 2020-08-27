@@ -1,0 +1,99 @@
+create database db_diversos;
+
+use db_diversos;
+create table tb_escola(
+id bigint (5) auto_increment,
+idade int(2),
+nome varchar(30),
+série int (1),
+desempenho varchar(15),
+ativo boolean ,
+primary key (id)
+);
+
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (15,"Éder",7,"regular",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (12,"Otávior",5,"regular",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (12,"Evilson",9,"avançado",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (19,"Cristian",5,"ruim",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (50,"Antonia",7,"ruim",false);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (12,"Margarida",3,"regular",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (25,"Murilo",7,"regular",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (8,"Monica",2,"regular",false);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (15,"George",9,"avançado",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (21,"Ingrid",7,"regular",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (13,"Lucas",4,"regular",false);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (16,"Camile",5,"ruim",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (28,"Beatriz",5,"ruim",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (12,"Naiane",1,"regular",true);
+insert into tb_escola(idade,nome,série,desempenho,ativo) values (19,"luisa",6,"regular",true); 
+
+select * from tb_escola where idade>18;
+select * from tb_escola where idade<18;
+select * from tb_escola where idade between 20 and 25;
+
+
+
+use db_diversos;
+create table tb_petshop(
+id bigint (5) auto_increment,
+peso int (3),
+raca varchar(30),
+cor varchar(20),
+doente boolean,
+primary key (id)
+);
+
+insert into tb_petshop(peso,raca,cor,doente) values (3,"legal","preto",true);
+insert into tb_petshop(peso,raca,cor,doente) values (2,"xauxau","marron",true);
+insert into tb_petshop(peso,raca,cor,doente) values (10,"grande","branco",true);
+insert into tb_petshop(peso,raca,cor,doente) values (2,"mini","pintado",true);
+insert into tb_petshop(peso,raca,cor,doente) values (5,"legal","preto e branco",true);
+insert into tb_petshop(peso,raca,cor,doente) values (3,"labrador","multicolor",true);
+insert into tb_petshop(peso,raca,cor,doente) values (3,"vira lata","preto",true);
+insert into tb_petshop(peso,raca,cor,doente) values (22,"big","marron",true);
+insert into tb_petshop(peso,raca,cor,doente) values (7,"coll","preto",true);
+insert into tb_petshop(peso,raca,cor,doente) values (5,"maneiro","preto e branco",true);
+insert into tb_petshop(peso,raca,cor,doente) values (4,"fila","pintado",true);
+insert into tb_petshop(peso,raca,cor,doente) values (3,"lindinho","preto",true);
+insert into tb_petshop(peso,raca,cor,doente) values (8,"alto","preto",true);
+insert into tb_petshop(peso,raca,cor,doente) values (2,"baixo","multicolor",true);
+insert into tb_petshop(peso,raca,cor,doente) values (3,"rasteiro","marron",true);
+
+select * from tb_petshop where peso>10;
+select * from tb_petshop where peso<10;
+select * from tb_petshop where peso between 10 and 30;
+
+
+
+use db_diversos;
+
+create table tb_varejo(
+id bigint (5) auto_increment,
+preco decimal (10,2),
+categoria varchar (50),
+estado varchar (30),
+quantidade int (5),
+peso decimal(3,3),
+disponivel boolean,
+primary key (id)
+);
+
+
+
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (20.00,"cozinha","novo",200,true);
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (30.00,"cozinha","novo","270",true);
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (89.90,"banheiro","usado","20",true);
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (67.80,"quarto","usado","15",true);
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (42.50,"jardim","novo","270",30,true);
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (1250.00,"cozinha","novo","10",true);
+insert into tb_varejo(preco,categoria,estado,quantidade,disponivel) values (500.00,"cozinha","novo","2",true);
+
+
+select * from tb_varejo where categoria like 'c%';
+select * from tb_varejo where categoria like 'cozinha%';
+select * from tb_varejo where preco>10 and preco<50;
+select categoria,preco from tb_varejo where categoria="cozinha" and preco>10 and preco<21;
+
+
+
+

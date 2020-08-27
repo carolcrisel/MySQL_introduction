@@ -1,0 +1,40 @@
+create database RH;
+--criando tabela
+
+use rh;
+create table tb_func (
+id bigint(5) auto_increment,
+nome varchar(30) not null,
+idade int(2),
+profissao varchar (60),
+ativo boolean,
+primary key (id)
+);
+
+--populando tabela
+
+insert into tb_func (nome,idade,profissao,ativo) values ("Carol",28,"Desenvolvedora",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Hans",27,"Ciêntista de Dados",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Marcel",26,"Engenheiro elétrico",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Maria",60,"Cuidadora",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Alexandra",36,"Motorista",false); 
+insert into tb_func (nome,idade,profissao,ativo) values ("Miguel",56,"Advogado",false);
+insert into tb_func (nome,idade,profissao,ativo) values ("Alex",39,"Médico",false);
+insert into tb_func (nome,idade,profissao,ativo) values ("Raquel",56,"Professora",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("José",22,"Entregador",false);
+insert into tb_func (nome,idade,profissao,ativo) values ("Juliano",51,"Estatisco",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Marilda",31,"cozinheira",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Guilherme",16,"estudante",false);
+insert into tb_func (nome,idade,profissao,ativo) values ("Olávio",76,"Empresário",false);
+insert into tb_func (nome,idade,profissao,ativo) values ("Kátia",22,"Modelo",true);
+insert into tb_func (nome,idade,profissao,ativo) values ("Lucas",36,"cabelereiro",true);
+
+-- Selecionando dados
+
+select * from tb_func where idade > 20;
+select * from tb_func where salario < 20;
+
+--Mudando dados
+
+update tb_func set nome = "Hermes", profissao = "administrador" where id =2;
+select * from tb_func
